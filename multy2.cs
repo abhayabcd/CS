@@ -22,6 +22,17 @@ class userarray
                 a[i, j] = Convert.ToInt32(Console.ReadLine());
             }
         }
+        
+        // Display
+        Console.WriteLine("\nArray Elements:");
+        for (int i = 0; i < a.GetLength(0); i++)
+		{
+			for (int j = 0; j < a.GetLength(1); j++)
+			{
+				Console.Write("a[{0},{1}] = {2}  ", i, j, a[i, j]);
+			}
+			Console.WriteLine();
+		}
 
         Console.WriteLine("\nElement Count:");
 
@@ -52,3 +63,4 @@ class userarray
         }
     }
 }
+
