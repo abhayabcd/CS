@@ -1,5 +1,5 @@
 using System;
-class ifelse
+class menu
 {
 	static void Main(String[] a)
 	{
@@ -7,8 +7,9 @@ class ifelse
 		int q = 0;
 		char c = 'y';
 		int count = 0;
-		int[] price = { 20, 30, 20 };
+		int[] price = new int[100];
 		int[] total = new int[100];
+		String[] name = new String[100];
 		int[] quantity = new int[100];
 		while (c == 'y' || c == 'Y')
 		{
@@ -21,21 +22,27 @@ class ifelse
 			switch (i)
 			{
 				case 1:
+					name[count] = "Aalu Puri";
+					price[count] = 20;
 					Console.WriteLine("Thank You for Chosing Item Plese Select Quntity:");
 					q = Convert.ToInt32(Console.ReadLine());
-					Console.WriteLine("Your Price of Aalu Puri is : " + (q * 20) + " /-");
+					Console.WriteLine("Your Price of Aalu Puri is : {0} * 20 = {1} /-", q, q * 20);
 					count++;
 					break;
 				case 2:
+					name[count] = "Save Puri";
+					price[count] = 30;
 					Console.WriteLine("Thank You for Chosing Item Plese Select Quntity:");
 					q = Convert.ToInt32(Console.ReadLine());
-					Console.WriteLine("Your Price of Save Puri is : " + (q * 30) + " /-");
+					Console.WriteLine("Your Price of Save Puri is : {0} * 30 = {1} /-", q, q * 30);
 					count++;
 					break;
 				case 3:
+					name[count] = "Pani Puri";
+					price[count] = 20;
 					Console.WriteLine("Thank You for Chosing Item Plese Select Quntity:");
 					q = Convert.ToInt32(Console.ReadLine());
-					Console.WriteLine("Your Price of Pani Puri is : " + (q * 20) + " /-");
+					Console.WriteLine("Your Price of Pani Puri is : {0} * 20 = {1} /-", q, q * 20);
 					count++;
 					break;
 				default:
@@ -43,7 +50,7 @@ class ifelse
 					break;
 			}
 			quantity[count - 1] = q;
-			total[count - 1] = price[i - 1] * quantity[count - 1];
+			total[count - 1] = price[count - 1] * quantity[count - 1];
 			Console.Write("Do You Want to Order More (y/n): ");
 			c = Convert.ToChar(Console.ReadLine());
 			Console.Clear();
@@ -55,7 +62,7 @@ class ifelse
 		for (i = 0; i < count; i++)
 		{
 			item[i] = i + 1;
-			Console.WriteLine("Item No: " + item[i] + "  Quantity: " + quantity[i] + "  Total Price: " + total[i] + " /-");
+			Console.WriteLine( item[i] +". "+ name[i] + "  Quantity: " + quantity[i] + "  Total Price: " + total[i] + " /-");
 			grandtotal = grandtotal + total[i];
 		}
 		Console.WriteLine("Grand Total Price is : " + grandtotal + " /-");
