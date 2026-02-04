@@ -47,7 +47,8 @@ class menu
 					break;
 				default:
 					Console.WriteLine("Sorry Please Select Valid Item");
-					break;
+      Console.Clear();
+					continue;
 			}
 			quantity[count - 1] = q;
 			total[count - 1] = price[count - 1] * quantity[count - 1];
